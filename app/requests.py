@@ -6,16 +6,18 @@ from .models import Articles, Sources
 BASE_SOURCE_URL = None
 BASE_ARTICLE_URL = None
 BASE_SEARCH_URL = None
+BASE_CATEGORY_URL = None
 # get api_key
 api_key = None
 
 
 def configure_request(app):
-    global api_key,BASE_SOURCE_URL,BASE_ARTICLE_URL,BASE_SEARCH_URL
+    global api_key,BASE_SOURCE_URL,BASE_ARTICLE_URL,BASE_SEARCH_URL, BASE_CATEGORY_URL
     api_key = app.config['API_KEY']
     BASE_SEARCH_URL = app.config['SEARCH_URL']
     BASE_ARTICLE_URL = app.config['ARTICLE_URL']
     BASE_SOURCE_URL = app.config['SOURCE_URL']
+    BASE_CATEGORY_URL = app.config['CATEGORY_URL']
 
 def get_source():
     news_source_url = BASE_SOURCE_URL.format(api_key)
@@ -78,6 +80,20 @@ def process_articles_data(data):
             articles_results.append(articles_object)
             
     return articles_results
+
+def get_articles_category(category):
+    category_url = BASE_CATEGORY_URL.format(category, api_key)
+    with urllib.request.urlopen(category_url) as category_news:
+        category_data = category_news.read()
+        category_data_dict = json.loads(category_data)
+        
+        category_results = None
+        
+        if category_data_dict['articles']:
+            category_list = category_data_dict['articles']
+            category_results = process_articles_data(category_list)
+        
+        return category_results
     
     
 def search_news(phrase):
