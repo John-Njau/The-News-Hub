@@ -1,6 +1,7 @@
 instance/
 *.pyc
 env/
+.env
 *.idea
 start.sh
 # https://newsapi.org/v2/top-headlines?language=en&category={}&apiKey={}
