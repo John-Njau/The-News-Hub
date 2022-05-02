@@ -1,0 +1,102 @@
+.card-box {
+  display: flex;
+  /* width: 50%; */
+  /* height: 50%; */
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: red; */
+  /* flex-direction: row; */
+  /* border: 2px solid rgb(255, 17, 0); */
+}
+
+h3 {
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: "Akshar", sans-serif;
+}
+.sources {
+  /* display: flex;
+    flex-direction: column; */
+  /* background: #c5fa48!important; */
+  /* background-color: rgb(240, 255, 255, 0.7); */
+  background-color: wheat;
+  border: 2px solid #dedede;
+  margin: 2rem;
+  border-radius:3%;
+  box-shadow: 2px 2px 2px #dedede;
+  transition: transform 0.5s;
+}
+
+.sources:hover {
+  cursor: pointer;
+  /* background: linear-gradient(270deg, rgb(74, 79, 197, 0.6), rgb(138, 51, 229, 0.5)); */
+  transform: scale(1.1);
+  background: rgba(75, 69, 67, 0.7);
+   /* background: rgba(150, 153, 179, 0.7); */ 
+  color: white !important;
+}
+
+a {
+  color: #083baa;
+  /* text-decoration: none; */
+  font-family: "Akshar", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+
+a:hover {
+  color: #8d8781;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(221, 45, 14, 0.7);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  font-family: "Akshar", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
+  /* font-family: "Poppins", sans-serif; */
+}
+
+/* .card-title:hover {
+  /* color: #8d8781; */
+  /* text-decoration: none; */
+/* }  */
+
+.sources:hover .card-title {
+  color: #000;
+  text-decoration: none;
+}
+
+.lang {
+  font-family: "Nunito Sans", sans-serif;
+  margin: 5px auto;
+}
+
+.items {
+  /* display: flex; */
+  /* width: 40%; */
+  padding: 4px 5px;
+  margin: 2rem;
+  /* width: 50vh; */
+  /* height: 70vh; */
+  /* background: #0964ee!important; */
+  /* border: 2px solid #000000; */
+}
+
+@media screen and (min-width: 768px) {
+  .items {
+    width: 50vh;
+    /* height: 100%; */
+    padding: 4px 5px;
+    margin: 2rem;
+    /* background: #0964ee!important; */
+    /* border: 2px solid #000000; */
+  }
+}
