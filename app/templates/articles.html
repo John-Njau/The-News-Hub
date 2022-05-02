@@ -1,0 +1,26 @@
+{% extends "base.html"%} {% block content %} {% block styles %} {{super ()}}
+<link
+  href="{{url_for('static',filename='css/articles.css')}}"
+  rel="stylesheet"
+/>
+{% endblock %}
+<h1>Top News</h1>
+<div class="articles-box container">
+  {% for article in articles %}
+  <div class="articles">
+    <div class="div">
+      <h6 class="art-title">{{article.title}}</h6>
+      <p>
+        {{article.description}}
+        <br />
+        <a href="{{article.url}}"> Read article</a>
+      </p>
+      <p>Posted on: {{article.time | truncate(13)}}</p>
+    </div>
+    <div>
+      <img class="img-fluid" src="{{article.image}}" alt="" width="" />
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

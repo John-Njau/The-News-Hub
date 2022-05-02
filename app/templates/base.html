@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static',filename='Assets/favicon.ico')}}"
+      type="image/x-icon"
+    />
+
+    {% if title %}
+    <title>{{title}}</title>
+    {% else%}
+    <title>News Hub -- News all over the World</title>
+    {% endif %} {% endblock %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Montserrat:wght@200;500&family=Nunito+Sans:wght@200&family=Poppins:ital,wght@0,100;0,200;0,300;1,300&family=Raleway:ital,wght@0,300;0,500;1,200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Your page content -->
+    {% extends 'bootstrap/base.html'%}
+    <!-- Navbar block -->
+    {% block navbar %} {% include 'navbar.html' %} {% endblock %} {% block
+    content %} {% endblock %} {% block scripts %}
+    <!-- Optional JavaScript -->
+    {% endblock %}
+  </body>
+</html>
