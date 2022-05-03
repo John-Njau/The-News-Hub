@@ -4,7 +4,7 @@ from . import main
 
 @main.route('/')
 def index():
-    title = "NewsHub"
+    title = "NeTwsHub"
     sources = get_source()
     search_news = request.args.get('news_query')
     if search_news:
